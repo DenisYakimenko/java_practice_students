@@ -16,7 +16,8 @@ public class StudentOrderValidator
             System.out.println("fin");
             AnswerCityRegister cityAnswer = checkCityRegister(so);
             if(!cityAnswer.success){
-                continue;//continue означает что если условие if совпадает то цикл возвращается в начало цикла
+               // continue;//continue означает что если условие if совпадает то цикл возвращается в начало цикла
+            break;
             }
             AnswerWedding wedAnswer = checkWedding(so);
             AnswerChildren childAns = checkChildren(so);
@@ -36,7 +37,18 @@ public class StudentOrderValidator
 
     static AnswerCityRegister checkCityRegister(StudentOrd so)
     {
-      return   CityRegisterValidator.checkCityRegister(so);
+        CityRegisterValidator crv = new CityRegisterValidator();
+        crv.hostName = "Host";
+        crv.login = "Login";
+        crv.password = "password";
+        AnswerCityRegister ans = crv.checkCityRegister(so);
+
+        CityRegisterValidator crv1 = new CityRegisterValidator();
+        crv1.hostName = "Host1";
+        crv1.login = "Login1";
+        crv1.password = "password1";
+        AnswerCityRegister ans1 = crv1.checkCityRegister(so);
+        return ans;
     }
 
     static AnswerWedding checkWedding(StudentOrd so)
