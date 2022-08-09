@@ -1,3 +1,5 @@
+package edu.javacourse.studentorder;
+
 public class SaveStudentOrd {
 
     public static void main(String[] args) {
@@ -10,8 +12,8 @@ public class SaveStudentOrd {
          System.out.println(an);
     }
 
-      static long SaveStudentOrd(StudentOrd studOrd){ //(StudentOrd studOrd) означает что принимаются на входные данные
-        // из StudentOrd и работать буду с этими данными через имя studOrd
+      static long SaveStudentOrd(StudentOrd studOrd){ //(edu.javacourse.studentorder.domain.StudentOrd studOrd) означает что принимаются на входные данные
+        // из edu.javacourse.studentorder.domain.StudentOrd и работать буду с этими данными через имя studOrd
 
         System.out.println(studOrd.mFirstName);
            long ans = 199;

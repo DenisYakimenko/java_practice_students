@@ -1,3 +1,8 @@
+package edu.javacourse.studentorder.validator;
+
+import edu.javacourse.studentorder.domain.AnswerCityRegister;
+import edu.javacourse.studentorder.domain.StudentOrd;
+
 public class CityRegisterValidator
 {
     String hostName;

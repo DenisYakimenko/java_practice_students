@@ -1,3 +1,5 @@
+package edu.javacourse.studentorder;
+
 public class StudentOrderValidator
 {
    public static void main(String[] args)
@@ -43,35 +45,38 @@ public class StudentOrderValidator
         crv.password = "password";
         AnswerCityRegister ans = crv.checkCityRegister(so);
 
-        CityRegisterValidator crv1 = new CityRegisterValidator();
-        crv1.hostName = "Host1";
-        crv1.login = "Login1";
-        crv1.password = "password1";
-        AnswerCityRegister ans1 = crv1.checkCityRegister(so);
+       // edu.javacourse.studentorder.validator.CityRegisterValidator crv1 = new edu.javacourse.studentorder.validator.CityRegisterValidator();
+       // crv1.hostName = "Host1";
+       // crv1.login = "Login1";
+       // crv1.password = "password1";
+       // edu.javacourse.studentorder.domain.AnswerCityRegister ans1 = crv1.checkCityRegister(so);
         return ans;
     }
 
     static AnswerWedding checkWedding(StudentOrd so)
     {
-        System.out.println("Wedding is running");
-
-        return new AnswerWedding();
+       CheckWeddingValidator cwv = new CheckWeddingValidator();
+       return cwv.checkWedding(so);
     }
 
     static AnswerChildren checkChildren(StudentOrd so)
     {
-        System.out.println("checkChildren is running");
-        return new AnswerChildren();
+        CheckChildrenValidator ccv = new CheckChildrenValidator();
+        return ccv.checkChildren(so);
     }
 
     static AnswerStudent checkStudent(StudentOrd so)
     {
-        System.out.println("checkStudent is running");
-        return new AnswerStudent();
+        CheckStudentValidator csv = new CheckStudentValidator();
+        return csv.checkStudent(so);
     }
 
     static void senMail(StudentOrd so)
     {
-        System.out.println("Mail is running");
+
+        //new edu.javacourse.studentorder.mail.MailSender().senMail(so);
+        MailSender ms = new MailSender();
+        ms.senMail(so);
+
     }
 }
