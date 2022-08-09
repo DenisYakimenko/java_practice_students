@@ -1,5 +1,7 @@
 package edu.javacourse.studentorder;
 
+import edu.javacourse.studentorder.domain.StudentOrd;
+
 public class SaveStudentOrd {
 
     public static void main(String[] args) {

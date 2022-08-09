@@ -5,11 +5,11 @@ import edu.javacourse.studentorder.domain.StudentOrd;
 
 public class CityRegisterValidator
 {
-    String hostName;
-    String login;
+    public String hostName;
+    private String login;
     String password;
 
-    AnswerCityRegister checkCityRegister(StudentOrd so)
+   public AnswerCityRegister checkCityRegister(StudentOrd so)
     {
         System.out.println("checkCityRegister is running:" + hostName+","+login+","+password);
         AnswerCityRegister ans = new AnswerCityRegister();

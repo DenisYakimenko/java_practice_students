@@ -5,7 +5,7 @@ import edu.javacourse.studentorder.domain.StudentOrd;
 
 public class CheckStudentValidator
 {
-    AnswerStudent checkStudent(StudentOrd so) {
+   public AnswerStudent checkStudent(StudentOrd so) {
         System.out.println("checkStudent is running");
         return new AnswerStudent();
     }

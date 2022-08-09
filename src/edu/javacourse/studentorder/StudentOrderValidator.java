@@ -1,5 +1,12 @@
 package edu.javacourse.studentorder;
 
+import edu.javacourse.studentorder.domain.*;
+import edu.javacourse.studentorder.mail.MailSender;
+import edu.javacourse.studentorder.validator.CheckChildrenValidator;
+import edu.javacourse.studentorder.validator.CheckStudentValidator;
+import edu.javacourse.studentorder.validator.CheckWeddingValidator;
+import edu.javacourse.studentorder.validator.CityRegisterValidator;
+
 public class StudentOrderValidator
 {
    public static void main(String[] args)
@@ -41,8 +48,8 @@ public class StudentOrderValidator
     {
         CityRegisterValidator crv = new CityRegisterValidator();
         crv.hostName = "Host";
-        crv.login = "Login";
-        crv.password = "password";
+      //  crv.login = "Login";
+       // crv.password = "password";
         AnswerCityRegister ans = crv.checkCityRegister(so);
 
        // edu.javacourse.studentorder.validator.CityRegisterValidator crv1 = new edu.javacourse.studentorder.validator.CityRegisterValidator();
