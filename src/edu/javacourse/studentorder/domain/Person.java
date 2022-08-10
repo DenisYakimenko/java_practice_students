@@ -8,11 +8,8 @@ public class Person
     private String givenName;
     private String patronymic;
     private LocalDate dateOfBirth;
+    private Address address;
 
-    private String postCode;
-    private String street;
-    private String extension;
-    private String apartment;
 
     public String getSurName() {
         return surName;
@@ -46,35 +43,12 @@ public class Person
         this.dateOfBirth = dateOfBirth;
     }
 
-    public String getPostCode() {
-        return postCode;
+
+    public Address getAddress() {
+        return address;
     }
 
-    public void setPostCode(String postCode) {
-        this.postCode = postCode;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    public String getExtension() {
-        return extension;
-    }
-
-    public void setExtension(String extension) {
-        this.extension = extension;
-    }
-
-    public String getApartment() {
-        return apartment;
-    }
-
-    public void setApartment(String apartment) {
-        this.apartment = apartment;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }
