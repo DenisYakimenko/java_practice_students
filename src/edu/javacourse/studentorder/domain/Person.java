@@ -4,11 +4,11 @@ import java.time.LocalDate;
 
 public class Person
 {
-    private String surName;
-    private String givenName;
+    protected String surName;
+    protected String givenName;
     private String patronymic;
     private LocalDate dateOfBirth;
-    private Address address;
+    protected String address;
 
 
     public String getSurName() {
@@ -44,11 +44,11 @@ public class Person
     }
 
 
-    public Address getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 }
