@@ -9,12 +9,28 @@ import edu.javacourse.studentorder.validator.CityRegisterValidator;
 
 public class StudentOrderValidator
 {
-   public static void main(String[] args)
-    {
-        checkAll();
+
+    private CityRegisterValidator cityRegisterVal;
+    private CheckWeddingValidator weddingVal;
+    private CheckChildrenValidator childrenVal;
+    private CheckStudentValidator studentVal;
+    private MailSender mailSender;
+
+    public StudentOrderValidator(){
+        cityRegisterVal = new CityRegisterValidator();
+        weddingVal = new CheckWeddingValidator();
+        childrenVal = new CheckChildrenValidator();
+        studentVal = new CheckStudentValidator();
+        mailSender = new MailSender();
     }
 
-        static void checkAll()
+   public static void main(String[] args)
+    {
+        StudentOrderValidator sov = new StudentOrderValidator();
+        sov.checkAll();
+    }
+
+     public void checkAll()
     {
         while (true) {
             StudentOrd so = readStudentOrd();
@@ -37,53 +53,41 @@ public class StudentOrderValidator
         System.out.println("fin2");
     }
 
-    static StudentOrd readStudentOrd()
+    public StudentOrd readStudentOrd()
     {
         StudentOrd so = new StudentOrd();
         return so;
     }
 
 
-    static AnswerCityRegister checkCityRegister(StudentOrd so)
+    public AnswerCityRegister checkCityRegister(StudentOrd so)
     {
-        CityRegisterValidator crv = new CityRegisterValidator();
-        crv.hostName = "Host";
-      //  crv.login = "Login";
-       // crv.password = "password";
-        AnswerCityRegister ans = crv.checkCityRegister(so);
 
-       // edu.javacourse.studentorder.validator.CityRegisterValidator crv1 = new edu.javacourse.studentorder.validator.CityRegisterValidator();
-       // crv1.hostName = "Host1";
-       // crv1.login = "Login1";
-       // crv1.password = "password1";
-       // edu.javacourse.studentorder.domain.AnswerCityRegister ans1 = crv1.checkCityRegister(so);
-        return ans;
+        return cityRegisterVal.checkCityRegister(so);
     }
 
-    static AnswerWedding checkWedding(StudentOrd so)
+    public AnswerWedding checkWedding(StudentOrd so)
     {
-       CheckWeddingValidator cwv = new CheckWeddingValidator();
-       return cwv.checkWedding(so);
+
+       return weddingVal.checkWedding(so);
     }
 
-    static AnswerChildren checkChildren(StudentOrd so)
+    public AnswerChildren checkChildren(StudentOrd so)
     {
-        CheckChildrenValidator ccv = new CheckChildrenValidator();
-        return ccv.checkChildren(so);
+
+        return childrenVal.checkChildren(so);
     }
 
-    static AnswerStudent checkStudent(StudentOrd so)
+    public AnswerStudent checkStudent(StudentOrd so)
     {
-        CheckStudentValidator csv = new CheckStudentValidator();
-        return csv.checkStudent(so);
+
+        return studentVal.checkStudent(so);
     }
 
-    static void senMail(StudentOrd so)
+    public void senMail(StudentOrd so)
     {
 
-        //new edu.javacourse.studentorder.mail.MailSender().senMail(so);
-        MailSender ms = new MailSender();
-        ms.senMail(so);
+        mailSender.senMail(so);
 
     }
 }
