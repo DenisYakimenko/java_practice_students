@@ -13,7 +13,7 @@ public class SaveStudentOrd {
       //  long an = SaveStudentOrd(so);
       //   System.out.println(an);
 
-         buildStudOrd();
+
     }
 
       static long SaveStudentOrd(StudentOrd studOrd){ //(edu.javacourse.studentorder.domain.StudentOrd studOrd) означает что принимаются на входные данные
@@ -24,10 +24,11 @@ public class SaveStudentOrd {
            return ans; //если static то обязателно return (возвратить)
       }
 
-      static StudentOrd buildStudOrd(){
+      public static StudentOrd buildStudOrd(long id){
 
           StudentOrd so = new StudentOrd();
-          Adalt husband = new Adalt();
+          so.setStudentOrderId(id);
+          /*Adalt husband = new Adalt();
           husband.setGivenName("Andrey");
           husband.setSurName("Petrov");
           husband.setPassportNumber("3453245");
@@ -36,7 +37,7 @@ public class SaveStudentOrd {
           so.setHusband(husband);
 
           String ans = husband.getPersonString();
-          System.out.println(ans);
+          System.out.println(ans);*/
 
         return so;
       }

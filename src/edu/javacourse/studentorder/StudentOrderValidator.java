@@ -30,33 +30,41 @@ public class StudentOrderValidator
         sov.checkAll();
     }
 
-     public void checkAll()
-    {
-        while (true) {
-            StudentOrd so = readStudentOrd();
-            System.out.println("start");
-            if(so ==null){
-                break;
-            }
-            System.out.println("fin");
-            AnswerCityRegister cityAnswer = checkCityRegister(so);
-            if(!cityAnswer.success){
-               // continue;//continue означает что если условие if совпадает то цикл возвращается в начало цикла
-            break;
-            }
-            AnswerWedding wedAnswer = checkWedding(so);
-            AnswerChildren childAns = checkChildren(so);
-            AnswerStudent studAns = checkStudent(so);
-
-            senMail(so);
-        }
-        System.out.println("fin2");
+     public void checkAll(){
+            StudentOrd[] soArray = readStudentOrds();
+            /*for (int c=0; c < soArray.length; c++){
+                System.out.println("-------------------");
+                checkOneOrder(soArray[c]);
+            }*/
+         //более короткий и правельный способ цикла for
+         for (StudentOrd so : soArray){
+             System.out.println("--------------------");
+             checkOneOrder(so);
+         }
     }
 
-    public StudentOrd readStudentOrd()
+    public void checkOneOrder(StudentOrd so){
+
+        AnswerCityRegister cityAnswer = checkCityRegister(so);
+
+        AnswerWedding wedAnswer = checkWedding(so);
+        AnswerChildren childAns = checkChildren(so);
+        AnswerStudent studAns = checkStudent(so);
+
+        senMail(so);
+    }
+
+
+
+    public StudentOrd[] readStudentOrds()
     {
-        StudentOrd so = new StudentOrd();
-        return so;
+        StudentOrd[] soArray = new StudentOrd[3]; // создали массив из 3 ячеек
+
+        for(int c = 0; c < soArray.length; c++ ) {
+          soArray[c] = SaveStudentOrd.buildStudOrd(c);
+        }
+
+        return soArray;
     }
 
 
