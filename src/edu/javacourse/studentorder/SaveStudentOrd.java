@@ -28,16 +28,16 @@ public class SaveStudentOrd {
 
           StudentOrd so = new StudentOrd();
           so.setStudentOrderId(id);
-          /*Adalt husband = new Adalt();
-          husband.setGivenName("Andrey");
+          Adalt husband = new Adalt("Petrov","Andrey", "Petrovich", null);
+         /* husband.setGivenName("Andrey");
           husband.setSurName("Petrov");
           husband.setPassportNumber("3453245");
           husband.setAddress("Dement street, 223");
           husband.setStudentId("87878");
           so.setHusband(husband);
 
-          String ans = husband.getPersonString();
-          System.out.println(ans);*/
+          String ans = husband.getPersonString();*/
+
 
         return so;
       }
