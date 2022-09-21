@@ -11,12 +11,8 @@ public class Adalt extends Person //extends означает что Adalt сод
     private String university;
     private String studentId;
 
-    public Adalt(){
-        System.out.println("Adalt is created");
-    }
-
-    public String getPersonString(){
-        return surName +" "+givenName+" "+passportNumber+" "+address+ ", Univetsity"+" "+studentId ;
+    public Adalt(String surName, String givenName, String patronymic, LocalDate dateOfBirth) {
+       super(surName, givenName, patronymic, dateOfBirth);
     }
 
 
