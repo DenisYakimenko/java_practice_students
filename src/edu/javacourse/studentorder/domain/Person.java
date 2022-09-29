@@ -8,7 +8,10 @@ public abstract class Person
     private String givenName;
     private String patronymic;
     private LocalDate dateOfBirth;
-    protected String address;
+    private Address address;
+
+    public Person() {
+    }
 
     public Person(String surName, String givenName, String patronymic, LocalDate dateOfBirth) {
         this.surName = surName;
@@ -16,8 +19,6 @@ public abstract class Person
         this.patronymic = patronymic;
         this.dateOfBirth = dateOfBirth;
     }
-
-
 
     public String getSurName() {
         return surName;
@@ -51,12 +52,11 @@ public abstract class Person
         this.dateOfBirth = dateOfBirth;
     }
 
-
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 }
