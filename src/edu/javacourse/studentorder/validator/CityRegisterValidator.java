@@ -39,6 +39,13 @@ public class CityRegisterValidator
                 CityRegisterCheckerResponse cans =
                         personChecker.checkPerson(child);
             }
+
+            // применим цикл for iche для получения списка
+            for (Child child : children){
+                CityRegisterCheckerResponse cans =
+                        personChecker.checkPerson(child);
+            }
+
         } catch (CityRegisterException ex) {
             ex.printStackTrace(System.out);
         }
