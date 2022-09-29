@@ -40,7 +40,7 @@ public class StudentOrder
 
     public void addChild(Child child){
         if(child == null){
-            children = new ArrayList<>();
+            children = new ArrayList<>(8);
         }
         children.add(child);
     }
