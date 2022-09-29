@@ -14,6 +14,7 @@ public class FakeCityRegisterChecker implements CityRegisterChecker
     private static final String BAD_2 = "2001";
     private static final String ERROR_1 = "1002";
     private static final String ERROR_2 = "2002";
+    public static final String FAKE_CONS = "Fake ERROR";
 
     public CityRegisterCheckerResponse checkPerson(Person person)
             throws CityRegisterException {
@@ -31,7 +32,7 @@ public class FakeCityRegisterChecker implements CityRegisterChecker
                 res.setExisting(false);
             }
             if (ps.equals(ERROR_1) || ps.equals(ERROR_2)) {
-                CityRegisterException ex = new CityRegisterException("Fake ERROR " + ps);
+                CityRegisterException ex = new CityRegisterException(FAKE_CONS +" "+ ps);
                 throw ex;
             }
         }
