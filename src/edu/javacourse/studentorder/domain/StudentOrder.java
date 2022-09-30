@@ -2,6 +2,7 @@ package edu.javacourse.studentorder.domain;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class StudentOrder
@@ -40,7 +41,7 @@ public class StudentOrder
 
     public void addChild(Child child){
         if(child == null){
-            children = new ArrayList<>(8);
+            children = new LinkedList<>();
         }
         children.add(child);
     }
