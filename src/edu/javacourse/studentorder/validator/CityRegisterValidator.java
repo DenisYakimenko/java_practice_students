@@ -2,13 +2,12 @@ package edu.javacourse.studentorder.validator;
 
 import edu.javacourse.studentorder.domain.Child;
 import edu.javacourse.studentorder.domain.register.AnswerCityRegister;
-import edu.javacourse.studentorder.domain.register.CityRegisterCheckerResponse;
+import edu.javacourse.studentorder.domain.register.CityRegisterResponse;
 import edu.javacourse.studentorder.domain.StudentOrder;
 import edu.javacourse.studentorder.exception.CityRegisterException;
 import edu.javacourse.studentorder.validator.register.CityRegisterChecker;
 import edu.javacourse.studentorder.validator.register.FakeCityRegisterChecker;
 
-import java.util.Iterator;
 import java.util.List;
 
 public class CityRegisterValidator
@@ -21,12 +20,12 @@ public class CityRegisterValidator
 
     public AnswerCityRegister checkCityRegister(StudentOrder so) {
         try {
-            CityRegisterCheckerResponse hans = personChecker.checkPerson(so.getHusband());
-            CityRegisterCheckerResponse wans = personChecker.checkPerson(so.getWife());
+            CityRegisterResponse hans = personChecker.checkPerson(so.getHusband());
+            CityRegisterResponse wans = personChecker.checkPerson(so.getWife());
 
             List<Child> children = so.getChildren();
 
-            // применим цикл for для получения списка
+            /* применим цикл for для получения списка
             for(int i=0; i<children.size(); i++){
 
             CityRegisterCheckerResponse cans =
@@ -39,10 +38,11 @@ public class CityRegisterValidator
                 CityRegisterCheckerResponse cans =
                         personChecker.checkPerson(child);
             }
+            */
 
             // применим цикл for iche для получения списка
             for (Child child : children){
-                CityRegisterCheckerResponse cans =
+                CityRegisterResponse cans =
                         personChecker.checkPerson(child);
             }
 
