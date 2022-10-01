@@ -31,4 +31,28 @@ public class AnswerCityRegisterItem
 
     private CityStatus status;
     private Person person;
+    private CityError error;
+
+    public AnswerCityRegisterItem(CityStatus status, Person person) {
+        this.status = status;
+        this.person = person;
+    }
+
+    public AnswerCityRegisterItem(CityStatus status, Person person, CityError error) {
+        this.status = status;
+        this.person = person;
+        this.error = error;
+    }
+
+    public CityStatus getStatus() {
+        return status;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public CityError getError() {
+        return error;
+    }
 }
